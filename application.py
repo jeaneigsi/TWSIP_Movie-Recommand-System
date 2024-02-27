@@ -28,7 +28,7 @@ movies_data.head()
 
 user_matrix = user_ratings_df.pivot(index=['userId'], columns=['movieId'], values='rating').fillna(0)
 # Supprimer la colonne en trop
-user_matrix = user_matrix.iloc[:10158, :10158]
+user_matrix = user_matrix.iloc[:4022, :4022]
 
 print(user_matrix.shape)
 user_matrix.head()
