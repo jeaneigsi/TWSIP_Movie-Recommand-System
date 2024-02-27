@@ -14,6 +14,21 @@ if selected == "Simuler":
     # Paramètres pour la recommandation
     st.title("Système de recommandation de films")
     st.subheader("Entrez le nom du film et le nombre de recommandations souhaité :movie_camera:")
+
+    st.markdown(""" 
+                <style>
+                .reportview-container{
+                    background: url("https://unsplash.com/fr/photos/televiseur-a-ecran-plat-affichant-le-logo-netflix-AWOl7qqsffM");
+                    background-size: cover;
+                  
+                }
+                </style>""", unsafe_allow_html=True)
+
+
+
+
+
+
     film_name = st.text_input("Entrez le nom du film:", "Batman")
     n_recs = st.slider("Nombre de recommandations:", min_value=1, max_value=20, value=5)
 
