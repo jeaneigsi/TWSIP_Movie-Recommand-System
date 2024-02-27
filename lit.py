@@ -12,8 +12,10 @@ with st.sidebar:
 # Logique pour traiter la sélection de l'utilisateur
 if selected == "Simuler":
     # Paramètres pour la recommandation
+    st.title("Système de recommandation de films")
+    st.subheader("Entrez le nom du film et le nombre de recommandations souhaité :movie_camera:")
     film_name = st.text_input("Entrez le nom du film:", "Batman")
-    n_recs = st.slider("Nombre de recommandations:", min_value=1, max_value=20, value=10)
+    n_recs = st.slider("Nombre de recommandations:", min_value=1, max_value=20, value=5)
 
     # Obtenir les recommandations de films
     movie_recs = movie_recommender_engine(film_name, user_matrix, cf_knn_model, n_recs, movies_df)
