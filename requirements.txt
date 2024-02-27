@@ -59,6 +59,7 @@ jupyterlab_git==0.50.0
 jupyterlab_pygments==0.3.0
 jupyterlab_server==2.25.2
 kiwisolver==1.4.5
+Levenshtein==0.25.0
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 matplotlib==3.8.2
@@ -108,9 +109,11 @@ Pygments==2.17.2
 pyparsing==3.1.1
 python-dateutil==2.8.2
 python-json-logger==2.0.7
+python-Levenshtein==0.25.0
 pytz==2024.1
 PyYAML==6.0.1
 pyzmq==25.1.2
+rapidfuzz==3.6.1
 referencing==0.33.0
 requests==2.31.0
 rfc3339-validator==0.1.4
