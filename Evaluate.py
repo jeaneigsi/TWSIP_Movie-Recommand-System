@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from sklearn.metrics import f1_score, accuracy_score, recall_score, mean_squared_error
 from sklearn.model_selection import train_test_split
+from sklearn.neighbors import NearestNeighbors
 
 # Charger les données d'évaluation
 user_ratings_df = pd.read_csv("rating-000.csv")
