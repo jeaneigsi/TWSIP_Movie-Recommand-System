@@ -15,7 +15,7 @@ jobs:
 
     - name: Run a one-line script
       run: |
-        echo "" >> README.md
+        echo "" >> readme.md
         ssh -T git@github.com
         git config user.name {{USERNAME}}
         git config user.email {{EMAIL}}
