@@ -3,6 +3,7 @@ name: CI
 on:
   schedule:
     - cron: '*/5 * * * *'
+
   workflow_dispatch:
 
 jobs:
@@ -12,23 +13,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Set up SSH
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-
-    - name: Configure Git
-      run: |
-        git config user.name "${{ secrets.GIT_USER_NAME }}"
-        git config user.email "${{ secrets.GIT_USER_EMAIL }}"
-
     - name: Run a one-line script
       run: |
         echo "" >> README.md
-        git add README.md
+        ssh -T git@github.com
+        git config user.name {{USERNAME}}
+        git config user.email {{EMAIL}}
+        git add .
         git commit -m "Always green!"
         git push
-      env:
-        GIT_SSH_COMMAND: "ssh -i ~/.ssh/id_rsa -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
